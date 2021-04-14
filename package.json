@@ -1,0 +1,12 @@
+{
+  "name": "xixunyun",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "node app.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.1",
+    "qs": "^6.10.1"
+  }
+}
