@@ -1,4 +1,4 @@
-name: nodejs tb autosign
+name: 习讯云自动签到
  
 on: 
   push:
@@ -7,7 +7,7 @@ on:
       - cron: '0 18 * * *'
  
 jobs:
-  one:
+  sign:
  
     runs-on: ubuntu-latest
     
