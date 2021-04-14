@@ -16,6 +16,7 @@ const signdata = qs.stringify({
     remark: 8,
     change_sign_resource: 0,
 })
+console.log(data);
 const headers = {
     'content-type': 'application/x-www-form-urlencoded',
 }
@@ -42,4 +43,3 @@ axios.post(loginApi, data, { headers }).then((res) => {
         })
     }
 })
-console.log(123456);
