@@ -1,7 +1,11 @@
 {
   "name": "xixunyun",
   "version": "0.1.0",
+  "description": "习讯云签到测试",
   "private": true,
+  "main": "app.js",
+  "author": "eax",
+  "license": "ISC",
   "scripts": {
     "serve": "node app.js"
   },
