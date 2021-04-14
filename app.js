@@ -42,3 +42,4 @@ axios.post(loginApi, data, { headers }).then((res) => {
         })
     }
 })
+console.log(123456);
