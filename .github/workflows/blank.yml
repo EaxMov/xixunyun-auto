@@ -21,7 +21,7 @@ jobs:
     # npm install
     - name: npm install and do sign
       env:
-        BDUSS: ${{ secrets.password }}
+        PASSWORD: ${{ secrets.PASSWORD }}
       run: |
         npm install
         node app.js
