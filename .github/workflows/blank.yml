@@ -4,7 +4,7 @@ on:
   push:
   gollum: 
   schedule: 
-      - cron: '0 11,21 * * *'
+      - cron: '0 18 * * *'
  
 jobs:
   one:
@@ -21,7 +21,13 @@ jobs:
     # npm install
     - name: npm install and do sign
       env:
+        ACCOUNT: ${{ secrets.ACCOUNT }}
         PASSWORD: ${{ secrets.PASSWORD }}
+        ADDRESS: ${{ secrets.ADDRESS }}
+        ADDRESS_NAME: ${{ secrets.ADDRESS_NAME }}
+        LATITUDE: ${{ secrets.LATITUDE }}
+        LONGITUDE: ${{ secrets.LONGITUDE }}
+        SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
       run: |
         npm install
         node app.js
