@@ -1,4 +1,3 @@
-console.log()
 const axios = require('axios')
 const qs = require('qs')
 let token = ''
