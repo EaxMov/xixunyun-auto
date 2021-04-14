@@ -26,7 +26,7 @@ axios.post(loginApi, data, { headers }).then((res) => {
     if (res && res.data && res.data.data) {
         token = res.data.data.token
         console.log('登录成功>>>签到中')
-        const signApi = `https://api.xixunyun.com/signin_rsa?token=${token}&from=app&version=4.4.9&platform=android&entrance_year=0&graduate_year=0&school_id=34`
+        const signApi = `https://api.xixunyun.com/signin_rsa?token=${token}&from=app&version=4.4.9&platform=android&entrance_year=0&graduate_year=0&school_id=${process.env.SCHOOL_ID}`
         axios.post(signApi, signdata, { headers }).then((res2) => {
             if (res2 && res2.data) {
                 if (res2.data.code === 20000) {
