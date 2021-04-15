@@ -21,7 +21,7 @@ function login(){
         })
     })
 }
-function sign(){
+function sign(token){
     const signApi = qs.signApi(token)
     axios.post(signApi, signdata, { headers }).then((res) => {
         if (res && res.data) {
