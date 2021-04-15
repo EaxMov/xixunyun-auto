@@ -1,33 +1,32 @@
 name: 习讯云自动签到
- 
-on: 
-  push:
-  gollum: 
-  schedule: 
-      - cron: '35 10 * * *'
- 
+
+on:
+    # push:
+    gollum:
+    schedule:
+        - cron: "35 10 * * *"
+
 jobs:
-  sign:
- 
-    runs-on: ubuntu-latest
-    
-    steps:
-    - uses: actions/checkout@v2
-    # 使用 node:10
-    - name: use Node.js 10.x
-      uses: actions/setup-node@v1
-      with:
-        node-version: 10.x
-    # npm install
-    - name: npm install and do sign
-      env:
-        ACCOUNT: ${{ secrets.ACCOUNT }}
-        PASSWORD: ${{ secrets.PASSWORD }}
-        ADDRESS: ${{ secrets.ADDRESS }}
-        ADDRESS_NAME: ${{ secrets.ADDRESS_NAME }}
-        LATITUDE: ${{ secrets.LATITUDE }}
-        LONGITUDE: ${{ secrets.LONGITUDE }}
-        SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
-      run: |
-        npm install
-        node app.js
+    sign:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v2
+            # 使用 node:10
+            - name: use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            # npm install
+            - name: npm install and do sign
+              env:
+                  ACCOUNT: ${{ secrets.ACCOUNT }}
+                  PASSWORD: ${{ secrets.PASSWORD }}
+                  ADDRESS: ${{ secrets.ADDRESS }}
+                  ADDRESS_NAME: ${{ secrets.ADDRESS_NAME }}
+                  LATITUDE: ${{ secrets.LATITUDE }}
+                  LONGITUDE: ${{ secrets.LONGITUDE }}
+                  SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
+              run: |
+                  npm install
+                  node app.js

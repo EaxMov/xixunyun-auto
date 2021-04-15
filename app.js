@@ -4,7 +4,6 @@ const data = qs.data
 const signdata = qs.signdata
 const headers = qs.headers
 const loginApi = qs.loginApi
-console.log(qs);
 axios.post(loginApi, data, { headers }).then((res) => {
     if (res && res.data && res.data.data) {
         console.log('登录成功>>>签到中')
