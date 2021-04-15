@@ -11,6 +11,7 @@ login().then(token => {
     studentReportInfo(token)
 })
 
+//登录
 function login(){
     return new Promise((resolve,reject) => {
         axios.post(loginApi, data, { headers }).then((res) => {
@@ -22,6 +23,8 @@ function login(){
         })
     })
 }
+
+//签到提交
 function sign(token){
     const signApi = qs.signApi(token)
     axios.post(signApi, signdata, { headers }).then((res) => {
@@ -32,6 +35,7 @@ function sign(token){
     })
 }
 
+//日报提交
 function studentReportInfo(token){
     const studentReportApi = qs.studentReportApi(token)
     const studentReportCommitApit = qs.studentReportCommitApit(token)
@@ -47,6 +51,7 @@ function studentReportInfo(token){
     })
 }
 
+//推送微信通知
 function wechetSend(type,msg){
     const params = {
         token: qs.token,
