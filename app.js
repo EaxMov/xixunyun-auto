@@ -43,12 +43,12 @@ function sign(token){
 }
 
 function wechetSend(type,msg){
-    const query = {
+    const params = {
         token: qs.token,
         title: '习讯云签到' + type,
         content: msg
     }
-    axios.get('http://pushplus.hxtrip.com/send',query).then(res => {
+    axios.get('http://pushplus.hxtrip.com/send',{ params }).then(res => {
         if(res && res.data && res.data.code === 200){
             console.log("发送微信推送成功");
         }
