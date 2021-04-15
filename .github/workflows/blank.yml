@@ -18,7 +18,7 @@ jobs:
               with:
                   node-version: 10.x
             # npm install
-            - name: npm install and do sign
+            - name: 签到日志
               env:
                   ACCOUNT: ${{ secrets.ACCOUNT }}
                   PASSWORD: ${{ secrets.PASSWORD }}
