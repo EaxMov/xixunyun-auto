@@ -14,17 +14,17 @@ axios.post(loginApi, data, { headers }).then((res) => {
         axios.post(signApi, signdata, { headers }).then((res2) => {
             if (res2 && res2.data) {
                 if (res2.data.code === 20000) {
-                    console.log('签到成功')
-                    sendEmail('success')
+                    console.log(res2.data.code + ','+ res2.data.message)
+                    sendEmail('success',res2.data.message)
                     return
                 }
                 if (res2.data.code === 64032) {
-                    console.log('重复签到')
-                    sendEmail('repeat')
+                    console.log(res2.data.code + ','+ res2.data.message)
+                    sendEmail('repeat',res2.data.message)
                     return
                 }
-                console.log('未知错误')
-                sendEmail('faild')
+                console.log(res2.data.code + ','+ res2.data.message)
+                sendEmail('faild',res2.data.message)
             }
         })
     }else{

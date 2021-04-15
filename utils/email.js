@@ -16,21 +16,21 @@ let mailOptions = {
     text:'签到'
 }
 const send = {
-    success:() => {
+    success:(msg) => {
         mailOptions.subject += '成功'
-        mailOptions.text += '成功'
+        mailOptions.text = msg
     },
-    faild:() => {
+    faild:(msg) => {
         mailOptions.subject += '失败'
-        mailOptions.text += '失败'
+        mailOptions.text = msg
     },
-    repeat:() => {
+    repeat:(msg) => {
         mailOptions.subject += '重复'
-        mailOptions.text += '重复'
+        mailOptions.text = msg
     }
 }
-function sendEmail(type){
-    send[type]
+function sendEmail(type,msg){
+    send[type](msg)
     tansporter.sendMail(mailOptions,(err,data) => {
         if(err){
             console.log("发送邮件失败");
