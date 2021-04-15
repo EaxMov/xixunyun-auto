@@ -4,7 +4,7 @@ on:
     push:
     gollum:
     schedule:
-        - cron: "0 1 * * *"
+        - cron: 0 0 * * * #早上8点签到
 
 jobs:
     sign:

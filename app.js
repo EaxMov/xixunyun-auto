@@ -1,6 +1,6 @@
 const axios = require('axios')
 const qs = require('./utils/qs')
-const sendEmail = require('./utils/email')
+const sendEmail = require('./utils/email') //需要邮件通知请配置CODE和EMAIL，自己发给自己，并且下面注释打开
 const data = qs.data
 const signdata = qs.signdata
 const headers = qs.headers
