@@ -4,7 +4,7 @@ on:
     push:
     gollum:
     schedule:
-        - cron: "35 10 * * *"
+        - cron: "0 1 * * *"
 
 jobs:
     sign:

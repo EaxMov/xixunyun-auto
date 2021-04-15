@@ -13,17 +13,15 @@ axios.post(loginApi, data, { headers }).then((res) => {
         const signApi = qs.signApi(res.data.data.token)
         axios.post(signApi, signdata, { headers }).then((res2) => {
             if (res2 && res2.data) {
+                console.log(res2.data.code + ','+ res2.data.message)
                 if (res2.data.code === 20000) {
-                    console.log(res2.data.code + ','+ res2.data.message)
                     sendEmail('success',res2.data.message)
                     return
                 }
                 if (res2.data.code === 64032) {
-                    console.log(res2.data.code + ','+ res2.data.message)
                     sendEmail('repeat',res2.data.message)
                     return
                 }
-                console.log(res2.data.code + ','+ res2.data.message)
                 sendEmail('faild',res2.data.message)
             }
         })
