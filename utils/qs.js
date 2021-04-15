@@ -11,7 +11,7 @@ const signdata = qs.stringify({
     address_name: process.env.ADDRESS_NAME,
     latitude: process.env.LATITUDE,
     longitude:process.env.LONGITUDE,
-    remark: 8,
+    remark: 0,
     change_sign_resource: 0,
 })
 
