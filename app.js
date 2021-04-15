@@ -27,14 +27,30 @@ function sign(token){
         if (res && res.data) {
             console.log(res.data.code + ','+ res.data.message)
             if (res.data.code === 20000) {
-                sendEmail('成功',res.data.message)
+                // sendEmail('成功',res.data.message)
+                wechetSend('成功',res.data.message)
                 return
             }
             if (res.data.code === 64032) {
-                sendEmail('重复',res.data.message)
+                // sendEmail('重复',res.data.message)
+                wechetSend('重复',res.data.message)
                 return
             }
-            sendEmail('失败',res.data.message)
+            // sendEmail('失败',res.data.message)
+            wechetSend('失败',res.data.message)
+        }
+    })
+}
+
+function wechetSend(type,msg){
+    const query = {
+        token: qs.token,
+        title: '习讯云签到' + type,
+        content: msg
+    }
+    axios.get('http://pushplus.hxtrip.com/send',query).then(res => {
+        if(res && res.data && res.data.code === 200){
+            console.log("发送微信推送成功");
         }
     })
 }

@@ -23,6 +23,7 @@ const signApi = (token) => {
 }
 const mail = process.env.MAIL
 const code = process.env.CODE
+const token = process.env.TOKEN
 module.exports = {
     data,
     signdata,
@@ -30,5 +31,6 @@ module.exports = {
     signApi,
     headers,
     mail,
-    code
+    code,
+    token
 }

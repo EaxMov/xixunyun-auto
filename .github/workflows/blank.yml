@@ -29,6 +29,7 @@ jobs:
                   SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
                   EMAIL: ${{ secrets.EMAIL }}
                   CODE: ${{ secrets.CODE }}
+                  TOKEN: ${{ secrets.TOKEN }}
               run: |
                   npm install
                   node app.js
