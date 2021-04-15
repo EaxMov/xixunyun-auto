@@ -1,4 +1,3 @@
-
 const nodemailer = require("nodemailer");
 const mail = process.env.EMAIL
 const code = process.env.CODE

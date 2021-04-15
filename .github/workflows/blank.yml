@@ -27,6 +27,8 @@ jobs:
                   LATITUDE: ${{ secrets.LATITUDE }}
                   LONGITUDE: ${{ secrets.LONGITUDE }}
                   SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
+                  EMAIL: ${{ secrets.EMAIL }}
+                  CODE: ${{ secrets.CODE }}
               run: |
                   npm install
                   node app.js
