@@ -15,22 +15,9 @@ let mailOptions = {
     subject:'习讯云签到',
     text:'签到'
 }
-const send = {
-    success:(msg) => {
-        mailOptions.subject += '成功'
-        mailOptions.text = msg
-    },
-    faild:(msg) => {
-        mailOptions.subject += '失败'
-        mailOptions.text = msg
-    },
-    repeat:(msg) => {
-        mailOptions.subject += '重复'
-        mailOptions.text = msg
-    }
-}
 function sendEmail(type,msg){
-    send[type](msg)
+    mailOptions.subject += type
+    mailOptions.text = msg
     tansporter.sendMail(mailOptions,(err,data) => {
         if(err){
             console.log("发送邮件失败");

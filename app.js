@@ -27,14 +27,14 @@ function sign(token){
         if (res && res.data) {
             console.log(res.data.code + ','+ res.data.message)
             if (res.data.code === 20000) {
-                sendEmail('success',res.data.message)
+                sendEmail('成功',res.data.message)
                 return
             }
             if (res.data.code === 64032) {
-                sendEmail('repeat',res.data.message)
+                sendEmail('重复',res.data.message)
                 return
             }
-            sendEmail('faild',res.data.message)
+            sendEmail('失败',res.data.message)
         }
     })
 }
