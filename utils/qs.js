@@ -21,11 +21,14 @@ const loginApi = 'https://api.xixunyun.com/login/api?from=app&version=4.4.9&plat
 const signApi = (token) => {
     return `https://api.xixunyun.com/signin_rsa?token=${token}&from=app&version=4.4.9&platform=android&entrance_year=0&graduate_year=0&school_id=${process.env.SCHOOL_ID}`
 }
-
+const mail = process.env.MAIL
+const code = process.env.CODE
 module.exports = {
     data,
     signdata,
     loginApi,
     signApi,
-    headers
+    headers,
+    mail,
+    code
 }

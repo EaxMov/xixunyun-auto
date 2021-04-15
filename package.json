@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "axios": "^0.21.1",
+    "nodemailer": "^6.5.0",
     "qs": "^6.10.1"
   }
 }

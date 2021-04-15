@@ -1,9 +1,12 @@
 const axios = require('axios')
 const qs = require('./utils/qs')
+const sendEmail = require('./utils/email')
 const data = qs.data
 const signdata = qs.signdata
 const headers = qs.headers
 const loginApi = qs.loginApi
+
+
 axios.post(loginApi, data, { headers }).then((res) => {
     if (res && res.data && res.data.data) {
         console.log('登录成功>>>签到中')
@@ -12,13 +15,16 @@ axios.post(loginApi, data, { headers }).then((res) => {
             if (res2 && res2.data) {
                 if (res2.data.code === 20000) {
                     console.log('签到成功')
+                    sendEmail('success')
                     return
                 }
                 if (res2.data.code === 64032) {
                     console.log('重复签到')
+                    sendEmail('repeat')
                     return
                 }
                 console.log('未知错误')
+                sendEmail('faild')
             }
         })
     }else{
