@@ -23,18 +23,18 @@ function login(){
 }
 function sign(){
     const signApi = qs.signApi(token)
-    axios.post(signApi, signdata, { headers }).then((res2) => {
-        if (res2 && res2.data) {
-            console.log(res2.data.code + ','+ res2.data.message)
-            if (res2.data.code === 20000) {
-                sendEmail('success',res2.data.message)
+    axios.post(signApi, signdata, { headers }).then((res) => {
+        if (res && res.data) {
+            console.log(res.data.code + ','+ res.data.message)
+            if (res.data.code === 20000) {
+                sendEmail('success',res.data.message)
                 return
             }
-            if (res2.data.code === 64032) {
-                sendEmail('repeat',res2.data.message)
+            if (res.data.code === 64032) {
+                sendEmail('repeat',res.data.message)
                 return
             }
-            sendEmail('faild',res2.data.message)
+            sendEmail('faild',res.data.message)
         }
     })
 }
