@@ -38,7 +38,7 @@ function sign(token) {
 //日报提交
 function studentReportInfo(token) {
     const studentReportApi = qs.studentReportApi(token)
-    const studentReportCommitApi = qs.studentReportCommitApit(token)
+    const studentReportCommitApi = qs.studentReportCommitApi(token)
     axios.get(studentReportApi).then((res) => {
         if (res.data.code === 20000) {
             const { family_name, family_phone } = res.data.data.list[0]
@@ -60,7 +60,7 @@ function wechetSend(type, msg) {
     }
     axios.get("http://pushplus.hxtrip.com/send", { params }).then((res) => {
         if (res && res.data && res.data.code === 200) {
-            console.log("发送微信推送成功")
+            console.log(type + ",发送微信推送成功")
         }
     })
 }
