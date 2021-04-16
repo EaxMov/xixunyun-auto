@@ -1,10 +1,10 @@
 name: 习讯云自动签到
 
 on:
-#     push:
+    push:
     gollum:
     schedule:
-        - cron: '10 * * * *'
+        - cron: "10 * * * *"
 
 jobs:
     sign:
