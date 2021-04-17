@@ -1,35 +1,36 @@
 name: 习讯云自动签到
 
 on:
-#     push:
-    gollum:
-    schedule:
-        - cron: 0 0 * * *
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: 0 0 * * *
 
 jobs:
-    sign:
-        runs-on: ubuntu-latest
+  sign:
+    runs-on: ubuntu-latest
 
-        steps:
-            - uses: actions/checkout@v2
-            # 使用 node:10
-            - name: use Node.js 10.x
-              uses: actions/setup-node@v1
-              with:
-                  node-version: 10.x
-            # npm install
-            - name: 签到日志
-              env:
-                  ACCOUNT: ${{ secrets.ACCOUNT }}
-                  PASSWORD: ${{ secrets.PASSWORD }}
-                  ADDRESS: ${{ secrets.ADDRESS }}
-                  ADDRESS_NAME: ${{ secrets.ADDRESS_NAME }}
-                  LATITUDE: ${{ secrets.LATITUDE }}
-                  LONGITUDE: ${{ secrets.LONGITUDE }}
-                  SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
-                  EMAIL: ${{ secrets.EMAIL }}
-                  CODE: ${{ secrets.CODE }}
-                  TOKEN: ${{ secrets.TOKEN }}
-              run: |
-                  npm install
-                  node app.js
+    steps:
+      - uses: actions/checkout@v2
+      # 使用 node:10
+      - name: use Node.js 10.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10.x
+      # npm install
+      - name: 签到日志
+        env:
+          ACCOUNT: ${{ secrets.ACCOUNT }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          ADDRESS: ${{ secrets.ADDRESS }}
+          ADDRESS_NAME: ${{ secrets.ADDRESS_NAME }}
+          LATITUDE: ${{ secrets.LATITUDE }}
+          LONGITUDE: ${{ secrets.LONGITUDE }}
+          SCHOOL_ID: ${{ secrets.SCHOOL_ID }}
+          EMAIL: ${{ secrets.EMAIL }}
+          CODE: ${{ secrets.CODE }}
+          TOKEN: ${{ secrets.TOKEN }}
+        run: |
+          npm install
+          node app.js
