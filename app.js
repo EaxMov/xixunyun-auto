@@ -32,7 +32,7 @@ function sign(token) {
             console.log(res.data.code + "," + res.data.message)
             wechetSend("习讯云签到提交", res.data.message)
         }
-    })
+    }).catch(err => studentReportInfo(token))
 }
 
 //日报提交
@@ -48,7 +48,7 @@ function studentReportInfo(token) {
                 wechetSend("习讯云日报提交", res.data.message)
             })
         }
-    })
+    }).catch(err => studentReportInfo(token))
 }
 
 //推送微信通知
