@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "axios": ">=0.21.2",
-    "follow-redirects": ">=1.14.7",
     "jsencrypt": "^3.2.1",
     "nodemailer": "^6.5.0",
     "qs": "^6.10.1"
+  },
+  "devDependencies": {
+    "follow-redirects": ">=1.14.8"
   }
 }
