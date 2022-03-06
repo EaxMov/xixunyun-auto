@@ -1,9 +1,10 @@
-const qs = require('qs')
 global.window = {}
-const JSEncrypt = require('jsencrypt').default
+global.navigator = { appName: 'nodejs' }
+const qs = require('qs')
+const JSEncrypt = require('jsencrypt')
 const pubKey =
   'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlYsiV3DsG+t8OFMLyhdmG2P2J4GJwmwb1rKKcDZmTxEphPiYTeFIg4IFEiqDCATAPHs8UHypphZTK6LlzANyTzl9LjQS6BYVQk81LhQ29dxyrXgwkRw9RdWaMPtcXRD4h6ovx6FQjwQlBM5vaHaJOHhEorHOSyd/deTvcS+hRSQIDAQAB'
-const encryptor = new JSEncrypt()
+const encryptor = new JSEncrypt({ default_key_size: 512 })
 encryptor.setPublicKey(pubKey)
 
 const data = qs.stringify({
