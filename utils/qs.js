@@ -1,5 +1,6 @@
 const qs = require('qs')
-const JSEncrypt = require('jsencrypt')
+global.window = {}
+const JSEncrypt = require('jsencrypt').default
 const pubKey =
   'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlYsiV3DsG+t8OFMLyhdmG2P2J4GJwmwb1rKKcDZmTxEphPiYTeFIg4IFEiqDCATAPHs8UHypphZTK6LlzANyTzl9LjQS6BYVQk81LhQ29dxyrXgwkRw9RdWaMPtcXRD4h6ovx6FQjwQlBM5vaHaJOHhEorHOSyd/deTvcS+hRSQIDAQAB'
 const encryptor = new JSEncrypt()
