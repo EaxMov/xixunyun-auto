@@ -1,13 +1,9 @@
-global.window = {}
-global.navigator = { appName: 'nodejs' }
 const qs = require('qs')
-const JSEncrypt = require('jsencrypt')
+const NodeRSA = require('node-rsa')
 const pubKey =
   'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlYsiV3DsG+t8OFMLyhdmG2P2J4GJwmwb1rKKcDZmTxEphPiYTeFIg4IFEiqDCATAPHs8UHypphZTK6LlzANyTzl9LjQS6BYVQk81LhQ29dxyrXgwkRw9RdWaMPtcXRD4h6ovx6FQjwQlBM5vaHaJOHhEorHOSyd/deTvcS+hRSQIDAQAB'
-const encryptor = new JSEncrypt({ default_key_size: 512 })
-encryptor.setPublicKey(pubKey)
-
-const data = qs.stringify({
+const nodersa = new NodeRSA(pubKey)
+  const data = qs.stringify({
   account: process.env.ACCOUNT,
   password: process.env.PASSWORD,
   school_id: process.env.SCHOOL_ID,
@@ -17,8 +13,8 @@ const data = qs.stringify({
 const signdata = qs.stringify({
   address: process.env.ADDRESS,
   address_name: process.env.ADDRESS_NAME,
-  latitude: encryptor.encrypt(process.env.LATITUDE),
-  longitude: encryptor.encrypt(process.env.LONGITUDE),
+  latitude: nodersa.encrypt(process.env.LATITUDE),
+  longitude: nodersa.encrypt(process.env.LONGITUDE),
   remark: 0,
   change_sign_resource: 0
 })
