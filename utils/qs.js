@@ -5,7 +5,6 @@ const jsencrypt = require('jsencrypt');
 const pubkey = require('./pubkey')
 const encrypt = new jsencrypt()
 encrypt.setPublicKey(pubkey)
-console.log(encrypt.encrypt('116.397128'))
 const data = qs.stringify({
 account: process.env.ACCOUNT,
 password: process.env.PASSWORD,
