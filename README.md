@@ -7,12 +7,12 @@
 - 配置信息参数
   - **<u>ACCOUNT</u>**--账号
   - **<u>PASSWORD</u>**--密码
-  - **<u>SCHOOL_ID</u>**--学校id, 搜索自己学校（ https://oss-resume.xixunyun.com/school_map/web202201.json）
+  - **<u>SCHOOL_ID</u>**--学校id, 搜索自己学校（ https://oss-resume.xixunyun.com/school_map/web202201.json ）
   - **<u>ADDRESS</u>**--地址，如xx省xx市xx街道
   - **<u>ADDRESS_NAME</u>**--地址名，如xxx公司
   - **<u>LONGITUDE</u>**--经度
   - **<u>LATITUDE</u>**--纬度
-  - **<u>TOKEN</u>**--push+ 的token，用于签到后发送微信通知 （http://pushplus.hxtrip.com/）
+  - **<u>TOKEN</u>**--push+ 的token，用于签到后发送微信通知 （http://pushplus.hxtrip.com/ ）
   - **<u>CODE</u>**--邮件通知，可选
   - **<u>EMAIL</u>**--邮件通知地址，可选
 
