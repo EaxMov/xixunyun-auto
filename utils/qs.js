@@ -1,7 +1,9 @@
 const qs = require('qs')
 const NodeRSA = require('node-rsa')
 const pubKey =
-  'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlYsiV3DsG+t8OFMLyhdmG2P2J4GJwmwb1rKKcDZmTxEphPiYTeFIg4IFEiqDCATAPHs8UHypphZTK6LlzANyTzl9LjQS6BYVQk81LhQ29dxyrXgwkRw9RdWaMPtcXRD4h6ovx6FQjwQlBM5vaHaJOHhEorHOSyd/deTvcS+hRSQIDAQAB'
+  '-----BEGIN PUBLIC KEY-----\n' +
+  'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDlYsiV3DsG+t8OFMLyhdmG2P2J4GJwmwb1rKKcDZmTxEphPiYTeFIg4IFEiqDCATAPHs8UHypphZTK6LlzANyTzl9LjQS6BYVQk81LhQ29dxyrXgwkRw9RdWaMPtcXRD4h6ovx6FQjwQlBM5vaHaJOHhEorHOSyd/deTvcS+hRSQIDAQAB\n' +
+  '-----END PUBLIC KEY-----'
 const nodersa = new NodeRSA(pubKey)
 const data = qs.stringify({
 account: process.env.ACCOUNT,
@@ -13,8 +15,8 @@ system: '5.1.1'
 const signdata = qs.stringify({
   address: process.env.ADDRESS,
   address_name: process.env.ADDRESS_NAME,
-  latitude: nodersa.encrypt(process.env.LATITUDE, 'base64'),
-  longitude: nodersa.encrypt(process.env.LONGITUDE, 'base64'),
+  latitude: nodersa.encrypt(process.env.LATITUDE,'base64'),
+  longitude: nodersa.encrypt(process.env.LONGITUDE,'base64'),
   remark: 0,
   change_sign_resource: 0
 })
