@@ -12,7 +12,7 @@
   - **<u>ADDRESS_NAME</u>**--地址名，如xxx公司
   - **<u>LONGITUDE</u>**--经度
   - **<u>LATITUDE</u>**--纬度
-  - **<u>TOKEN</u>**--push+ 的token，用于签到后发送微信通知 （http://pushplus.hxtrip.com/ ）
+  - **<u>TOKEN</u>**--push+ 的token，用于签到后发送微信通知 （http://www.pushplus.plus/）
   - **<u>CODE</u>**--邮件通知，可选
   - **<u>EMAIL</u>**--邮件通知地址，可选
 
@@ -20,8 +20,7 @@
 
 1. ![](https://ftp.bmp.ovh/imgs/2022/02/b259b4e2d9e504d4.png)
 
-2.![](https://ftp.bmp.ovh/imgs/2022/02/81cce50ee9c7d1ce.png)
+2.![](https://s3.bmp.ovh/imgs/2022/09/05/40f2249c22042c6d.png)
 
-3.![](https://ftp.bmp.ovh/imgs/2022/02/951d3835fdc17346.png)
+3.![](https://s3.bmp.ovh/imgs/2022/09/05/a496f6184aa4eaf7.png)
 
-4.![](https://ftp.bmp.ovh/imgs/2022/02/e2ad02ef0339efb8.png)
