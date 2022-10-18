@@ -6,7 +6,6 @@ const signdata = qs.signdata
 const headers = qs.headers
 const loginApi = qs.loginApi
 
-
 login().then((token) => {
   sign(token)
   studentReportInfo(token)
