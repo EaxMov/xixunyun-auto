@@ -31,7 +31,7 @@ function sign(token) {
   axios.post(signApi, signdata, { headers }).then((res) => {
     if (res && res.data) {
       console.log(res.data.code + ',' + res.data.message)
-      wechetSend('习讯云签到提交', res.data.message)
+      wechatSend('习讯云签到提交', res.data.message)
     }
   })
 }
