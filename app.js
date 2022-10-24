@@ -45,14 +45,14 @@ function studentReportInfo(token) {
       const reportForm = qs.reportdata(family_name, family_phone)
       axios.post(studentReportCommitApi, reportForm).then((res) => {
         console.log(res.data.code + ',' + res.data.message)
-        wechetSend('习讯云日报提交', res.data.message)
+        wechatSend('习讯云日报提交', res.data.message)
       })
     }
   })
 }
 
 //推送微信通知
-function wechetSend(type, msg) {
+function wechatSend(type, msg) {
   const params = {
     token: qs.token,
     title: type,
