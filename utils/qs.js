@@ -43,9 +43,9 @@ const reportdata = (family_name, family_phone) => {
 const headers = {
   'content-type': 'application/x-www-form-urlencoded'
 }
-const loginApi = 'https://api.xixunyun.com/login/api?from=app&version=4.4.9&platform=android'
+const loginApi = 'https://api.xixunyun.com/login/api?from=app&version=5.1.1&platform=android'
 const signApi = (token) => {
-  return `https://api.xixunyun.com/signin_rsa?token=${token}&from=app&version=4.4.9&platform=android&entrance_year=0&graduate_year=0&school_id=${process.env.SCHOOL_ID}`
+  return `https://api.xixunyun.com/signin_rsa?token=${token}&from=app&version=5.1.1&platform=android&entrance_year=0&graduate_year=0&school_id=${process.env.SCHOOL_ID}`
 }
 const studentReportApi = (token) => {
   return `https://api.xixunyun.com/health/studentlist?token=${token}&page_no=1&page_size=1`
