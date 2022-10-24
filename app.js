@@ -6,6 +6,7 @@ const signdata = qs.signdata
 const headers = qs.headers
 const loginApi = qs.loginApi
 
+// 签到并提交每日体温报告
 login().then((token) => {
   sign(token)
   studentReportInfo(token)
