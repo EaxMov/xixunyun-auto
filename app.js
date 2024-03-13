@@ -45,6 +45,7 @@ function wechatSend(type, msg) {
     title: type,
     content: msg
   }
+  console.log(type,msg)
   axios.get('http://www.pushplus.plus/send', { params }).then((res) => {
     console.log(res)
     if (res && res.data && res.data.code === 200) {
