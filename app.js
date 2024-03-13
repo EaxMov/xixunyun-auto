@@ -10,7 +10,6 @@ const loginApi = qs.loginApi
 login().then((token) => {
   setTimeout(() => {
     sign(token);
-    studentReportInfo(token);
   }, 5000); // 5秒后提交，解决code99999签到失败
 });
 
@@ -35,23 +34,6 @@ function sign(token) {
       console.log(res.data.code + ',' + res.data.message)
       wechatSend('习讯云签到提交', res.data.message)
       // sendEmail('习讯云签到提交', res.data.message)
-    }
-  })
-}
-
-//日报提交
-function studentReportInfo(token) {
-  const studentReportApi = qs.studentReportApi(token)
-  const studentReportCommitApi = qs.studentReportCommitApi(token)
-  axios.get(studentReportApi).then((res) => {
-    if (res.data.code === 20000) {
-      const { family_name, family_phone } = res.data.data.list[0]
-      const reportForm = qs.reportdata(family_name, family_phone)
-      axios.post(studentReportCommitApi, reportForm).then((res) => {
-        console.log(res.data.code + ',' + res.data.message)
-        wechatSend('习讯云日报提交', res.data.message)
-        // sendEmail('习讯云日报提交', res.data.message)
-      })
     }
   })
 }
